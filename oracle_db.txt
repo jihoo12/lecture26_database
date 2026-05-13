@@ -1,0 +1,7 @@
+DROP USER c##name CASCADE; 	
+CREATE USER c##name IDENTIFIED BY password  
+DEFAULT TABLESPACE users 
+TEMPORARY TABLESPACE temp
+QUOTA UNLIMITED ON users;
+
+c##madang/madang
