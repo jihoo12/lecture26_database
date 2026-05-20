@@ -232,3 +232,5 @@ SELECT s1.영화제목 FROM 상영관 s1 WHERE s1.좌석수 = (SELECT MAX(s2.좌
 
 -- 40. 가장 최근 날짜에 예약한 고객의 이름 조회
 SELECT c.이름 FROM 고객 c WHERE EXISTS (SELECT 1 FROM 예약 r WHERE r.고객번호 = c.고객번호 AND r.날짜 = (SELECT MAX(날짜) FROM 예약));
+
+EXIT
