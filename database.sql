@@ -189,7 +189,7 @@ SELECT 이름 FROM 고객 WHERE 고객번호 NOT IN (SELECT DISTINCT 고객번�
 SELECT 극장이름 FROM 극장 WHERE 극장번호 NOT IN (SELECT DISTINCT 극장번호 FROM 예약);
 
 -- 27. 예약 횟수가 전체 고객 평균 예약 횟수보다 많은 고객번호 조회
-SELECT 고객번호 FROM 예약 GROUP BY 고객번호 HAVING COUNT(*) > (SELECT AVG(COUNT(*)) FROM (SELECT COUNT(*) AS cnt FROM 예약 GROUP BY 고객번호));
+SELECT 고객번호 FROM 예약 GROUP BY 고객번호 HAVING COUNT(*) > ( SELECT AVG(COUNT(*)) FROM 예약 GROUP BY 고객번호 );
 
 -- 28. 좌석수가 가장 적은 상영관이 속한 극장의 극장이름 조회
 SELECT 극장이름 FROM 극장 WHERE 극장번호 IN (SELECT 극장번호 FROM 상영관 WHERE 좌석수 = (SELECT MIN(좌석수) FROM 상영관));
