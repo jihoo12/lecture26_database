@@ -15,7 +15,7 @@ BEGIN
         RETURN;
     END IF;
 
-    -- 3. 배송 완료된 주문인지 체크 (★위치 조정 및 세미콜론 확인)
+    -- 3. 배송 완료된 주문인지 체크 (위치 조정 및 세미콜론 확인)
     IF v_status = 'DELIVERED' THEN
         DBMS_OUTPUT.PUT_LINE('배송 완료된 주문은 취소할 수 없습니다.');
         RETURN;
